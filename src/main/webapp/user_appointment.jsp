@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false" %>
 <%@ page import="com.hmsm.entity.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.hmsm.dao.DoctorDAO" %>
+<%@ page import="com.hmsm.entity.Doctor" %>
+<%@ page import="com.hmsm.db.DBConnection" %>
 
 <%
     User user = (User) session.getAttribute("userObj");
@@ -106,9 +110,28 @@ session.removeAttribute("errorMsg");
     <label>Diseases</label>
     <input type="text" name="diseases" required>
 
-    <label>Select Doctor</label>
-    <select name="doctorNameSelect" required>
-        <option value="">--Select Doctor--</option>
+   <label>Doctor</label><br>
+
+<select name="doctorNameSelect" required>
+    <option value="">--- Select Doctor ---</option>
+
+<%
+    DoctorDAO doctorDAO = new DoctorDAO(DBConnection.getConn());
+    List<Doctor> listOfDoctor = doctorDAO.getAllDoctor();
+
+    for(Doctor d : listOfDoctor){
+%>
+
+    <!-- value = doctor id -->
+    <option value="<%= d.getId() %>">
+        <%= d.getFullName() %> (<%= d.getSpecialist() %>)
+    </option>
+
+<%
+    }
+%>
+
+</select>
 
         <!-- Example Static Doctors 
         <option value="1">Dr. John (Cardiologist)</option>
