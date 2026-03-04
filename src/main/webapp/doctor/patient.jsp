@@ -3,12 +3,8 @@
 <%@page import="com.hmsm.entity.Doctor"%>
 <%@page import="com.hmsm.dao.AppointmentDAO"%>
 <%@page import="com.hmsm.db.DBConnection"%>
-<%@page import="com.hmsm.dao.DoctorDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
-<%@page isELIgnored="false"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,130 +13,119 @@
 <title>Patient Page</title>
 
 
-
-
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 10px 1px maroon;
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 </style>
-<!-- end of customs css for this page -->
-
 
 </head>
 <body>
-	<%@include file="navbar.jsp"%>
 
-	<!-- if "doctorObj" is empty means no one is login. -->
+<%@include file="navbar.jsp"%>
 
-	<c:if test="${empty doctorObj }">
+<%
+/* --------- LOGIN CHECK --------- */
+Doctor doctor = (Doctor) session.getAttribute("doctorObj");
 
-		<c:redirect url="../doctor_login.jsp"></c:redirect>
+if (doctor == null) {
+	response.sendRedirect("../doctor_login.jsp");
+	return;
+}
+%>
 
-	</c:if>
+<div class="container p-3">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card my-card">
+				<div class="card-body">
+					<p class="text-center text-success fs-3">Patient Details</p>
 
-	<!-- check is doctor is login or not -->
+					<%
+					/* --------- SUCCESS MESSAGE --------- */
+					String successMsg = (String) session.getAttribute("successMsg");
+					if (successMsg != null) {
+					%>
+						<p class="text-center text-success fs-5"><%= successMsg %></p>
+					<%
+						session.removeAttribute("successMsg");
+					}
 
+					/* --------- ERROR MESSAGE --------- */
+					String errorMsg = (String) session.getAttribute("errorMsg");
+					if (errorMsg != null) {
+					%>
+						<p class="text-center text-danger fs-5"><%= errorMsg %></p>
+					<%
+						session.removeAttribute("errorMsg");
+					}
+					%>
 
-	<div class="container p-3">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card my-card">
-					<div class="card-body">
-						<p class="text-center text-success fs-3">Patient Details</p>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Full Name</th>
+								<th>Gender</th>
+								<th>Age</th>
+								<th>Appointment Date</th>
+								<th>Email</th>
+								<th>Phone</th>
+								<th>Diseases</th>
+								<th>Status</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
 
-						<!-- message print -->
-						<!-- for success msg -->
-						<c:if test="${not empty successMsg }">
-							<p class="text-center text-success fs-5">${successMsg}</p>
-							<c:remove var="successMsg" scope="session" />
-						</c:if>
+						<%
+						AppointmentDAO appDAO = new AppointmentDAO(DBConnection.getConn());
+						List<Appointment> list = appDAO.getAllAppointmentByLoginDoctor(doctor.getId());
 
-						<!-- for error msg -->
-						<c:if test="${not empty errorMsg }">
-							<p class="text-center text-danger fs-5">${errorMsg}</p>
-							<c:remove var="errorMsg" scope="session" />
-						</c:if>
-						<!-- End of message print -->
+						for (Appointment applist : list) {
+						%>
 
-						<!-- table for patient list -->
+							<tr>
+								<td><%= applist.getFullName() %></td>
+								<td><%= applist.getGender() %></td>
+								<td><%= applist.getAge() %></td>
+								<td><%= applist.getAppointmentDate() %></td>
+								<td><%= applist.getEmail() %></td>
+								<td><%= applist.getPhone() %></td>
+								<td><%= applist.getDiseases() %></td>
+								<td><%= applist.getStatus() %></td>
 
-						<table class="table table-striped">
-							<thead>
-								<tr>
-									<th scope="col" style="padding-right: 100px">Full Name</th>
-									<th scope="col">Gender</th>
-									<th scope="col">Age</th>
-									<th scope="col">Appointment Date</th>
-									<th scope="col">Email</th>
-									<th scope="col">Phone</th>
-									<th scope="col">Diseases</th>
-									<th scope="col">Status</th>
-									<th scope="col">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-
+								<td>
 								<%
-								Doctor doctor = (Doctor) session.getAttribute("doctorObj");
-
-								//DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
-								AppointmentDAO appDAO = new AppointmentDAO(DBConnection.getConn());
-								List<Appointment> list = appDAO.getAllAppointmentByLoginDoctor(doctor.getId());
-								for (Appointment applist : list) {
+								if ("Pending".equals(applist.getStatus())) {
 								%>
-
-								<tr>
-									<th><%=applist.getFullName()%></th>
-									<td><%=applist.getGender()%></td>
-									<td><%=applist.getAge()%></td>
-									<td><%=applist.getAppointmentDate()%></td>
-									<td><%=applist.getEmail()%></td>
-									<td><%=applist.getPhone()%></td>
-									<td><%=applist.getDiseases()%></td>
-									<td><%=applist.getStatus()%></td>
-
-									<td>
-										<%
-										if ("Pending".equals(applist.getStatus())) {
-										%> <a href="comment.jsp?id=<%=applist.getId()%>"
-										class="btn btn-success btn-sm">Comment / Prescription</a> 
-										<%
- 										} else {
- 										%> 
- 										 <a href="#!" class="btn btn-success btn-sm disabled"><i
-											class="fa fa-comment"></i> Comment / Prescription</a>
-											 
-										<%
- 										}
- 										%>
-
-
-									</td>
-									
-								</tr>
-
-
-
+									<a href="comment.jsp?id=<%= applist.getId() %>"
+										class="btn btn-success btn-sm">
+										Comment / Prescription
+									</a>
+								<%
+								} else {
+								%>
+									<button class="btn btn-success btn-sm" disabled>
+										Comment / Prescription
+									</button>
 								<%
 								}
 								%>
+								</td>
+							</tr>
 
+						<%
+						}
+						%>
 
-							</tbody>
-						</table>
+						</tbody>
+					</table>
 
-						<!-- end table for doctor list -->
-
-					</div>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
+</div>
 
 </body>
 </html>
