@@ -10,66 +10,69 @@
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
 
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<!-- Simple Admin Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
 	<div class="container-fluid">
+
 		<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">
-			<i class="fa-solid fa-hospital"></i> Mediverse
-		</a>
+Mediverse		</a>
 
-		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		<ul class="navbar-nav me-auto">
 			<li class="nav-item">
-				<a class="nav-link active" href="<%=request.getContextPath()%>/..">
-					<i class="fa fa-home"></i> HOME
+				<a class="nav-link active" 
+				   href="<%=request.getContextPath()%>/index.jsp">
+					HOME
 				</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link active" href="<%=request.getContextPath()%>/admin/doctor.jsp">
-					<i class="fa-solid fa-user-doctor"></i> DOCTOR
+				<a class="nav-link active" 
+				   href="<%=request.getContextPath()%>/admin/doctor.jsp">
+					DOCTOR
 				</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link active" href="<%=request.getContextPath()%>/admin/view_doctor.jsp">
-					<i class="fa-solid fa-list"></i> VIEW DOCTOR
+				<a class="nav-link active" 
+				   href="<%=request.getContextPath()%>/admin/view_doctor.jsp">
+					VIEW DOCTOR
 				</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link active" href="<%=request.getContextPath()%>/admin/patient.jsp">
-					<i class="fa fa-wheelchair"></i> PATIENT
+				<a class="nav-link active" 
+				   href="<%=request.getContextPath()%>/admin/patient.jsp">
+					PATIENT
 				</a>
 			</li>
 		</ul>
 
 		<div class="dropdown">
-			<button class="btn btn-light dropdown-toggle" type="button"
+			<button class="btn btn-outline-light dropdown-toggle"
 				data-bs-toggle="dropdown">
-				<i class="fa fa-universal-access"></i> Admin
+				Admin
 			</button>
+
 			<ul class="dropdown-menu">
 				<li>
-					<a class="dropdown-item" 
+					<a class="dropdown-item"
 					   href="<%=request.getContextPath()%>/adminLogout">
 						Logout
 					</a>
 				</li>
 			</ul>
 		</div>
+
 	</div>
 </nav>
-<!-- Navbar End -->
 
+<!-- Page Content -->
 <div class="container mt-4">
-	<h2>Welcome to Admin Dashboard</h2>
-	<p>This is your admin panel page.</p>
+	<h3 class="text-success">Welcome to Admin Dashboard</h3>
+	<p>This is your simple admin panel page.</p>
 </div>
 
 <!-- Bootstrap JS -->
