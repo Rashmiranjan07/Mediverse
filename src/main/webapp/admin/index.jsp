@@ -28,6 +28,9 @@
 </head>
 <body>
 
+	<%@include file="navbar.jsp"%>
+
+
 	<!-- adminObj session maintain if "adminObj" empty than go and login first...-->
 	<!-- no one can access admin dashboard without login as admin-->
 	<c:if test="${empty adminObj }">
@@ -148,9 +151,6 @@
 	</div>
 
 	<!-- end of specialis modal -->
-
-
-
 
 
 </body>
