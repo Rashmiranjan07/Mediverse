@@ -143,7 +143,7 @@
 							and online result tracking.</p>
 					</div>
 				</div>
-
+				
 				<!-- Feature 5 -->
 				<div class="col-md-6 col-lg-4">
 					<div class="feature-card">
@@ -153,7 +153,7 @@
 							doorstep delivery and stock tracking.</p>
 					</div>
 				</div>
-
+				
 				<!-- Feature 6 -->
 				<div class="col-md-6 col-lg-4">
 					<div class="feature-card">
@@ -163,20 +163,14 @@
 							confidentiality and data protection.</p>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
 	</section>
-
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 	<!--  -->
-
 </body>
 <%@ include file="component/footer.jsp"%>
-
 </html>
 
 
