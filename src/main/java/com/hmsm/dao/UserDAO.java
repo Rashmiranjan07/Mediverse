@@ -91,7 +91,7 @@ public class UserDAO {
 
 		try {
 
-			String sql = "select * where id=? and password=?";
+			String sql = "select * from user where id=? and password=?";
 			PreparedStatement pstmt = this.conn.prepareStatement(sql);
 			pstmt.setInt(1, userId);
 			pstmt.setString(2, oldPassword);
