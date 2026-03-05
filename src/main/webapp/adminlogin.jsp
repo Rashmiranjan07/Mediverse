@@ -108,7 +108,11 @@ body {
 		<div class="login-box">
 
 			<div class="logo">
-				<h2>Mediverse Admin</h2>
+				<h2>Mediverse</h2>
+				<h3
+					style="font-weight: 700; color: #e21b23; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+					<i class="bi bi-shield-lock-fill"></i>  Admin 
+				</h3>
 			</div>
 
 			<!-- Success Message -->
