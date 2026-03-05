@@ -1,74 +1,171 @@
+
 <%
-    String successMsg = (String) session.getAttribute("successMsg");
-    String errorMsg = (String) session.getAttribute("errorMsg");
+String successMsg = (String) session.getAttribute("successMsg");
+String errorMsg = (String) session.getAttribute("errorMsg");
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Doctor</title>
+<title>Add Doctor | Admin</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+	font-family: 'Segoe UI', sans-serif;
+	background: #132440;
+	margin: 0;
+}
+
+/* section */
+.form-section {
+	padding: 60px 20px;
+}
+
+/* card */
+.form-card {
+	background: #ffffff;
+	border-radius: 20px;
+	padding: 35px;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+	max-width: 650px;
+	margin: auto;
+}
+
+/* title */
+.form-title {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 700;
+	color: #1f3c88;
+	margin-bottom: 25px;
+}
+
+/* labels */
+label {
+	font-weight: 600;
+	color: #1f3c88;
+	margin-top: 10px;
+}
+
+/* inputs */
+.form-control {
+	border-radius: 10px;
+	padding: 10px;
+}
+
+/* button */
+.btn-mediverse {
+	background: #e21b23;
+	color: white;
+	font-weight: 600;
+	border: none;
+	padding: 10px;
+	border-radius: 10px;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.btn-mediverse:hover {
+	background: #c5161d;
+}
+
+/* message */
+.success-msg {
+	color: green;
+	font-weight: 600;
+	text-align: center;
+}
+
+.error-msg {
+	color: red;
+	font-weight: 600;
+	text-align: center;
+}
+</style>
+
 </head>
+
 <body>
 
-<h2>Add Doctor</h2>
+	<%@include file="navbar.jsp"%>
 
-<hr>
+	<div class="container form-section">
 
-<!-- Success Message -->
-<%
-if(successMsg != null){
-%>
-<p style="color:green;"><%= successMsg %></p>
-<%
-session.removeAttribute("successMsg");
-}
-%>
+		<div class="form-card">
 
-<!-- Error Message -->
-<%
-if(errorMsg != null){
-%>
-<p style="color:red;"><%= errorMsg %></p>
-<%
-session.removeAttribute("errorMsg");
-}
-%>
+			<h3 class="form-title">
+				<i class="fa-solid fa-user-doctor"></i> Add Doctor
+			</h3>
 
-<hr>
+			<hr>
 
-<form action="<%= request.getContextPath() %>/addDoctor" method="post">
-    <label>Full Name:</label><br>
-    <input type="text" name="fullName" required>
-    <br><br>
+			<!-- Success Message -->
 
-    <label>Date of Birth:</label><br>
-    <input type="date" name="dateOfBirth" required>
-    <br><br>
+			<%
+			if (successMsg != null) {
+			%>
 
-    <label>Qualification:</label><br>
-    <input type="text" name="qualification" required>
-    <br><br>
+			<p class="success-msg">
+				<%=successMsg%>
+			</p>
 
-    <label>Specialist:</label><br>
-    <input type="text" name="specialist" required>
-    <br><br>
+			<%
+			session.removeAttribute("successMsg");
+			}
+			%>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required>
-    <br><br>
 
-    <label>Phone:</label><br>
-    <input type="text" name="phone" required>
-    <br><br>
+			<!-- Error Message -->
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required>
-    <br><br>
+			<%
+			if (errorMsg != null) {
+			%>
 
-    <button type="submit">Register Doctor</button>
+			<p class="error-msg">
+				<%=errorMsg%>
+			</p>
 
-</form>
+			<%
+			session.removeAttribute("errorMsg");
+			}
+			%>
+
+
+			<form action="<%=request.getContextPath()%>/addDoctor"
+				method="post">
+
+				<label>Full Name</label> <input type="text" name="fullName"
+					class="form-control" required> <label>Date of Birth</label>
+				<input type="date" name="dateOfBirth" class="form-control" required>
+
+				<label>Qualification</label> <input type="text" name="qualification"
+					class="form-control" required> <label>Specialist</label> <input
+					type="text" name="specialist" class="form-control" required>
+
+				<label>Email</label> <input type="email" name="email"
+					class="form-control" required> <label>Phone</label> <input
+					type="text" name="phone" class="form-control" required> <label>Password</label>
+				<input type="password" name="password" class="form-control" required>
+
+				<button type="submit" class="btn-mediverse">Register Doctor
+				</button>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
