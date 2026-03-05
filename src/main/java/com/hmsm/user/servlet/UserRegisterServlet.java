@@ -26,7 +26,7 @@ public class UserRegisterServlet extends HttpServlet {
 
 			// get all data/value which is coming from  page for new User
 			// registration
-			String fullName = req.getParameter("fullName");
+			String fullName = req.getParameter("full_name");
 			String email = req.getParameter("email");
 			String password = req.getParameter("password");
 

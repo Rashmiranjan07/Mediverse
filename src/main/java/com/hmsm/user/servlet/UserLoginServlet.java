@@ -29,7 +29,7 @@ public class UserLoginServlet extends HttpServlet {
 		
 		if (user!=null) {
 			session.setAttribute("userObj",user);
-			resp.sendRedirect("index.jsp"); 
+			resp.sendRedirect("index2.jsp"); 
 		}
 		else {
 			session.setAttribute("errorMsg","Invalid email or password");
