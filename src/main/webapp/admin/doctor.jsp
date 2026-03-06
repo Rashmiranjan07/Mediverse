@@ -8,7 +8,7 @@ String errorMsg = (String) session.getAttribute("errorMsg");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Doctor | Admin</title>
+<title>Add Doctor | Mediverse</title>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -24,69 +24,78 @@ body {
 	margin: 0;
 }
 
-/* section */
+/* Section */
 .form-section {
 	padding: 60px 20px;
 }
 
-/* card */
-.form-card {
-	background: #ffffff;
-	border-radius: 20px;
-	padding: 35px;
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-	max-width: 650px;
+/* Cream Container */
+.form-container {
+	background: #f7f0e6;
+	padding: 40px;
+	border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+	max-width: 750px;
 	margin: auto;
 }
 
-/* title */
-.form-title {
-	text-align: center;
-	font-size: 30px;
-	font-weight: 700;
-	color: #1f3c88;
-	margin-bottom: 25px;
+/* Card */
+.form-card {
+	background: #ffffff;
+	border-radius: 14px;
+	padding: 30px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* labels */
+/* Title */
+.form-title {
+	text-align: center;
+	font-size: 28px;
+	font-weight: 700;
+	color: #1f3c88;
+	margin-bottom: 20px;
+}
+
+/* Labels */
 label {
 	font-weight: 600;
 	color: #1f3c88;
 	margin-top: 10px;
 }
 
-/* inputs */
+/* Inputs */
 .form-control {
-	border-radius: 10px;
+	border-radius: 8px;
 	padding: 10px;
 }
 
-/* button */
+/* Button */
 .btn-mediverse {
 	background: #e21b23;
 	color: white;
 	font-weight: 600;
 	border: none;
 	padding: 10px;
-	border-radius: 10px;
+	border-radius: 8px;
 	width: 100%;
-	margin-top: 15px;
+	margin-top: 18px;
+	transition: 0.3s;
 }
 
 .btn-mediverse:hover {
 	background: #c5161d;
 }
 
-/* message */
+/* Messages */
 .success-msg {
 	color: green;
-	font-weight: 600;
+	font-weight: 500;
 	text-align: center;
 }
 
 .error-msg {
 	color: red;
-	font-weight: 600;
+	font-weight: 500;
 	text-align: center;
 }
 </style>
@@ -99,73 +108,70 @@ label {
 
 	<div class="container form-section">
 
-		<div class="form-card">
+		<div class="form-container">
 
-			<h3 class="form-title">
-				<i class="fa-solid fa-user-doctor"></i> Add Doctor
-			</h3>
+			<div class="form-card">
 
-			<hr>
+				<h3 class="form-title">
+					<i class="fa-solid fa-user-doctor"></i> Add Doctor
+				</h3>
 
-			<!-- Success Message -->
+				<hr>
 
-			<%
-			if (successMsg != null) {
-			%>
+				<!-- Success Message -->
+				<%
+				if (successMsg != null) {
+				%>
 
-			<p class="success-msg">
-				<%=successMsg%>
-			</p>
+				<p class="success-msg"><%=successMsg%></p>
 
-			<%
-			session.removeAttribute("successMsg");
-			}
-			%>
+				<%
+				session.removeAttribute("successMsg");
+				}
+				%>
 
+				<!-- Error Message -->
+				<%
+				if (errorMsg != null) {
+				%>
 
-			<!-- Error Message -->
+				<p class="error-msg"><%=errorMsg%></p>
 
-			<%
-			if (errorMsg != null) {
-			%>
+				<%
+				session.removeAttribute("errorMsg");
+				}
+				%>
 
-			<p class="error-msg">
-				<%=errorMsg%>
-			</p>
+				<form action="<%=request.getContextPath()%>/addDoctor" method="post">
 
-			<%
-			session.removeAttribute("errorMsg");
-			}
-			%>
+					<label>Full Name</label> <input type="text" name="fullName"
+						class="form-control" required> <label>Date of
+						Birth</label> <input type="date" name="dateOfBirth" class="form-control"
+						required> <label>Qualification</label> <input type="text"
+						name="qualification" class="form-control" required> <label>Specialist</label>
+					<input type="text" name="specialist" class="form-control" required>
 
+					<label>Email</label> <input type="email" name="email"
+						class="form-control" required> <label>Phone</label> <input
+						type="text" name="phone" class="form-control" required> <label>Password</label>
+					<input type="password" name="password" class="form-control"
+						required>
 
-			<form action="<%=request.getContextPath()%>/addDoctor"
-				method="post">
+					<button type="submit" class="btn-mediverse">Register
+						Doctor</button>
 
-				<label>Full Name</label> <input type="text" name="fullName"
-					class="form-control" required> <label>Date of Birth</label>
-				<input type="date" name="dateOfBirth" class="form-control" required>
+				</form>
 
-				<label>Qualification</label> <input type="text" name="qualification"
-					class="form-control" required> <label>Specialist</label> <input
-					type="text" name="specialist" class="form-control" required>
-
-				<label>Email</label> <input type="email" name="email"
-					class="form-control" required> <label>Phone</label> <input
-					type="text" name="phone" class="form-control" required> <label>Password</label>
-				<input type="password" name="password" class="form-control" required>
-
-				<button type="submit" class="btn-mediverse">Register Doctor
-				</button>
-
-			</form>
+			</div>
 
 		</div>
 
 	</div>
 
 	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+		
+	</script>
 
 </body>
 </html>
