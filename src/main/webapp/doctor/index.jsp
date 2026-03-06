@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Index Page | Doctor</title>
+<title>Doctor Dashboard | Mediverse</title>
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
@@ -20,62 +20,72 @@
 body {
 	font-family: 'Segoe UI', sans-serif;
 	background: #132440;
+	margin: 0;
 }
 
-/* Dashboard Container */
-.dashboard-container {
-	margin-top: 40px;
+/* Main Mediverse Container */
+.mediverse-container {
+	max-width: 900px;
+	margin: 40px auto;
+	background: #f7f0e6;
+	border-radius: 10px;
+	padding: 40px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Dashboard Title */
+/* Title */
 .dashboard-title {
-	color: white;
+	text-align: center;
 	font-size: 30px;
 	font-weight: 700;
-	text-align: center;
-	margin-bottom: 30px;
+	color: #1f3c88;
+	margin-bottom: 35px;
 }
 
-/* Mediverse Card */
-.my-card {
-	background: #ffffff;
-	border-radius: 18px;
+/* Cards */
+.dashboard-card {
+	background: white;
+	border-radius: 12px;
 	padding: 30px;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+	text-align: center;
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 	transition: 0.3s;
 }
 
-.my-card:hover {
+.dashboard-card:hover {
 	transform: translateY(-6px);
-	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+	box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
-/* Icons */
+/* Icon */
 .dashboard-icon {
 	color: #1f3c88;
-	margin-bottom: 10px;
+	margin-bottom: 12px;
 }
 
-/* Card Text */
+/* Text */
 .dashboard-text {
+	font-size: 18px;
+	font-weight: 600;
 	color: #1f3c88;
-	font-weight: 700;
-	font-size: 20px;
+	margin-bottom: 8px;
 }
 
+/* Number */
 .dashboard-number {
-	color: #e21b23;
-	font-size: 26px;
+	font-size: 28px;
 	font-weight: 700;
+	color: #e21b23;
 }
 </style>
 
 </head>
+
 <body>
 
 	<%@include file="navbar.jsp"%>
 
-	<!-- check is doctor is login or not -->
+	<!-- check is doctor login or not -->
 	<%
 	if (session.getAttribute("doctorObj") == null) {
 		response.sendRedirect("doctor_login.jsp");
@@ -83,50 +93,52 @@ body {
 	}
 	%>
 
-	<div class="container dashboard-container">
+	<%
+	DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
+	int totalNumberOfDoctor = docDAO.countTotalDoctor();
 
-		<p class="dashboard-title">Doctor Dashboard</p>
+	Doctor currentLoginDoctor = (Doctor) session.getAttribute("doctorObj");
+	%>
 
-		<%
-		DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
-		int totalNumberOfDoctor = docDAO.countTotalDoctor();
+	<div class="mediverse-container">
 
-		Doctor currentLoginDoctor = (Doctor) session.getAttribute("doctorObj");
-		%>
+		<div class="dashboard-title">Doctor Dashboard</div>
 
 		<div class="row justify-content-center g-4">
 
-			<div class="col-md-4">
+			<!-- Doctor Count -->
+			<div class="col-md-6">
 
-				<div class="card my-card text-center">
+				<div class="dashboard-card">
 
 					<div class="dashboard-icon">
 						<i class="fa-solid fa-user-doctor fa-3x"></i>
 					</div>
 
-					<p class="dashboard-text">Doctor</p>
+					<div class="dashboard-text">Doctor</div>
 
-					<p class="dashboard-number">
+					<div class="dashboard-number">
 						<%=totalNumberOfDoctor%>
-					</p>
+					</div>
 
 				</div>
 
 			</div>
 
-			<div class="col-md-4">
+			<!-- Appointment Count -->
+			<div class="col-md-6">
 
-				<div class="card my-card text-center">
+				<div class="dashboard-card">
 
 					<div class="dashboard-icon">
 						<i class="fa-solid fa-calendar-check fa-3x"></i>
 					</div>
 
-					<p class="dashboard-text">Total Appointment</p>
+					<div class="dashboard-text">Total Appointment</div>
 
-					<p class="dashboard-number">
+					<div class="dashboard-number">
 						<%=docDAO.countTotalAppointmentByDoctorId(currentLoginDoctor.getId())%>
-					</p>
+					</div>
 
 				</div>
 
