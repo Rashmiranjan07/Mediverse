@@ -8,7 +8,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Admin Dashboard</title>
+<title>Admin Dashboard | Mediverse</title>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -24,44 +24,51 @@ body {
 	margin: 0;
 }
 
-/* dashboard section */
+/* Dashboard Section */
 .dashboard-section {
 	padding: 60px 20px;
 }
 
-/* title */
-.dashboard-title {
-	text-align: center;
-	font-size: 32px;
-	font-weight: 700;
-	color: #ffffff;
-	margin-bottom: 40px;
+/* Cream Container */
+.dashboard-container {
+	background: #f7f0e6;
+	padding: 40px;
+	border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* cards */
+/* Title */
+.dashboard-title {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 700;
+	color: #1f3c88;
+	margin-bottom: 30px;
+}
+
+/* Cards */
 .my-card {
 	background: #ffffff;
-	border: none;
-	border-radius: 20px;
+	border-radius: 14px;
 	padding: 30px;
 	text-align: center;
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 }
 
 .my-card:hover {
-	transform: translateY(-6px);
-	box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* icons */
+/* Icons */
 .card-icon {
-	font-size: 45px;
+	font-size: 40px;
 	color: #e21b23;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
-/* text */
+/* Text */
 .card-title {
 	font-size: 20px;
 	font-weight: 600;
@@ -69,9 +76,22 @@ body {
 }
 
 .card-count {
-	font-size: 28px;
+	font-size: 26px;
 	font-weight: 700;
 	color: #e21b23;
+}
+
+/* Messages */
+.success-msg {
+	color: green;
+	text-align: center;
+	font-weight: 500;
+}
+
+.error-msg {
+	color: red;
+	text-align: center;
+	font-weight: 500;
 }
 </style>
 
@@ -83,7 +103,6 @@ body {
 
 	<%
 	/* Session Check */
-
 	Object adminObj = session.getAttribute("adminObj");
 
 	if (adminObj == null) {
@@ -92,126 +111,118 @@ body {
 	}
 	%>
 
-
 	<div class="container dashboard-section">
 
-		<p class="dashboard-title">Admin Dashboard</p>
+		<div class="dashboard-container">
+
+			<p class="dashboard-title">Admin Dashboard</p>
+
+			<%
+			/* Success Message */
+			String successMsg = (String) session.getAttribute("successMsg");
+
+			if (successMsg != null) {
+			%>
+
+			<p class="success-msg"><%=successMsg%></p>
+
+			<%
+			session.removeAttribute("successMsg");
+			}
+			%>
 
 
-		<%
-		/* Success Message */
+			<%
+			/* Error Message */
+			String errorMsg = (String) session.getAttribute("errorMsg");
 
-		String successMsg = (String) session.getAttribute("successMsg");
+			if (errorMsg != null) {
+			%>
 
-		if (successMsg != null) {
-		%>
+			<p class="error-msg"><%=errorMsg%></p>
 
-		<p class="text-center text-success fs-5">
-			<%=successMsg%>
-		</p>
-
-		<%
-		session.removeAttribute("successMsg");
-		}
-		%>
+			<%
+			session.removeAttribute("errorMsg");
+			}
+			%>
 
 
+			<%
+			DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
 
-		<%
-		/* Error Message */
-
-		String errorMsg = (String) session.getAttribute("errorMsg");
-
-		if (errorMsg != null) {
-		%>
-
-		<p class="text-center text-danger fs-5">
-			<%=errorMsg%>
-		</p>
-
-		<%
-		session.removeAttribute("errorMsg");
-		}
-		%>
+			int totalNumberOfDoctor = docDAO.countTotalDoctor();
+			int totalNumberOfUser = docDAO.countTotalUser();
+			int totalNumberOfAppointment = docDAO.countTotalAppointment();
+			%>
 
 
-
-		<%
-		DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
-
-		int totalNumberOfDoctor = docDAO.countTotalDoctor();
-		int totalNumberOfUser = docDAO.countTotalUser();
-		int totalNumberOfAppointment = docDAO.countTotalAppointment();
-		%>
+			<div class="row g-4 justify-content-center">
 
 
+				<div class="col-md-4">
 
-		<div class="row g-4 justify-content-center">
+					<div class="my-card">
 
+						<div class="card-icon">
+							<i class="fa-solid fa-user-doctor"></i>
+						</div>
 
-			<div class="col-md-4">
+						<p class="card-title">Doctor</p>
 
-				<div class="my-card">
+						<p class="card-count">
+							<%=totalNumberOfDoctor%>
+						</p>
 
-					<div class="card-icon">
-						<i class="fa-solid fa-user-doctor"></i>
 					</div>
-
-					<p class="card-title">Doctor</p>
-
-					<p class="card-count">
-						<%=totalNumberOfDoctor%>
-					</p>
 
 				</div>
 
-			</div>
 
 
+				<div class="col-md-4">
 
-			<div class="col-md-4">
+					<div class="my-card">
 
-				<div class="my-card">
+						<div class="card-icon">
+							<i class="fas fa-user-circle"></i>
+						</div>
 
-					<div class="card-icon">
-						<i class="fas fa-user-circle"></i>
+						<p class="card-title">User</p>
+
+						<p class="card-count">
+							<%=totalNumberOfUser%>
+						</p>
+
 					</div>
-
-					<p class="card-title">User</p>
-
-					<p class="card-count">
-						<%=totalNumberOfUser%>
-					</p>
 
 				</div>
 
-			</div>
 
 
+				<div class="col-md-4">
 
-			<div class="col-md-4">
+					<div class="my-card">
 
-				<div class="my-card">
+						<div class="card-icon">
+							<i class="fa-solid fa-calendar-check"></i>
+						</div>
 
-					<div class="card-icon">
-						<i class="fa-solid fa-calendar-check"></i>
+						<p class="card-title">Total Appointment</p>
+
+						<p class="card-count">
+							<%=totalNumberOfAppointment%>
+						</p>
+
 					</div>
-
-					<p class="card-title">Total Appointment</p>
-
-					<p class="card-count">
-						<%=totalNumberOfAppointment%>
-					</p>
 
 				</div>
 
-			</div>
 
+			</div>
 
 		</div>
 
 	</div>
-
 
 
 	<script
