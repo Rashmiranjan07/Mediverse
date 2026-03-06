@@ -155,7 +155,7 @@ body {
 			<form action="UserRegisterServlet" method="post">
 
 				<label class="form-label">Full Name</label> <input type="text"
-					name="name" class="form-control" placeholder="Enter Full Name"
+					name="fullname" class="form-control" placeholder="Enter Full Name"
 					required> <label class="form-label">Email</label> <input
 					type="email" name="email" class="form-control"
 					placeholder="Enter Email" required> <label

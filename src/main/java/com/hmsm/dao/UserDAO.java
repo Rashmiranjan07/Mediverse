@@ -15,29 +15,31 @@ public class UserDAO {
 		this.conn = conn;
 	}
 
-	public boolean userRegister(User user) {
+	public boolean userRegister(User u) {
 
-		boolean f = false;
+	    boolean f = false;
 
-		try {
-			// insert user in db
-			String sql = "insert into user(full_name, email, password) values(?,?,?)";
+	    try {
 
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user.getFullName());
-			pstmt.setString(2, user.getEmail());
-			pstmt.setString(3, user.getPassword());
+	        String sql = "insert into user(full_name,email,password) values(?,?,?)";
 
-			pstmt.executeUpdate();
+	        PreparedStatement ps = conn.prepareStatement(sql);
 
-			f = true; // if query execute successfully then f becomes true otherwise false...
+	        ps.setString(1, u.getFullName());
+	        ps.setString(2, u.getEmail());
+	        ps.setString(3, u.getPassword());
 
-		} catch (Exception e) {
-			e.printStackTrace();
+	        int i = ps.executeUpdate();
 
-		}
+	        if (i == 1) {
+	            f = true;
+	        }
 
-		return f;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return f;
 	}
 
 	// when call loginUser() method, it checks that particular user available or
