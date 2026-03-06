@@ -17,27 +17,32 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {
 	font-family: 'Segoe UI', sans-serif;
 	background: #132440;
 }
 
-/* Main Card */
-.my-card {
-	background: white;
-	border-radius: 18px;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+/* Main Container Card */
+.mediverse-card {
+	background: #fff3e6;
+	border-radius: 16px;
 	padding: 25px;
+	border: 1px solid #ffe0c2;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 
-/* Title */
+/* Page Title */
 .page-title {
 	color: #1f3c88;
 	font-weight: 700;
 }
 
-/* Table Container */
+/* Table Style */
 .patient-table {
 	border-radius: 12px;
 	overflow: hidden;
@@ -51,37 +56,37 @@ body {
 
 /* Row Hover */
 .patient-table tbody tr:hover {
-	background: #f4f7ff;
+	background: #f5f8ff;
 }
 
 /* Status Badge */
 .status-badge {
-	padding: 5px 10px;
+	background: #e9f2ff;
+	color: #1f3c88;
+	padding: 5px 12px;
 	border-radius: 6px;
 	font-size: 13px;
 	font-weight: 600;
-	background: #e9f2ff;
-	color: #1f3c88;
 }
 
-/* Comment Button Light (Before Comment) */
+/* Light Comment Button */
 .comment-btn-light {
 	background: #cfe0ff;
 	color: #1f3c88;
 	padding: 6px 14px;
 	border-radius: 6px;
 	font-size: 14px;
+	font-weight: 600;
 	text-decoration: none;
 	display: inline-block;
-	font-weight: 600;
 }
 
 .comment-btn-light:hover {
-	background: #b5d0ff;
+	background: #b7d1ff;
 	color: #1f3c88;
 }
 
-/* Comment Button Dark (After Comment) */
+/* Dark Comment Button */
 .comment-btn-dark {
 	background: #1f3c88;
 	color: white;
@@ -91,9 +96,15 @@ body {
 	font-weight: 600;
 	border: none;
 }
+
+/* Responsive spacing */
+.container {
+	margin-top: 25px;
+}
 </style>
 
 </head>
+
 <body>
 
 	<%@include file="navbar.jsp"%>
@@ -108,23 +119,28 @@ body {
 	}
 	%>
 
-	<div class="container p-4">
+	<div class="container">
 
 		<div class="row">
+
 			<div class="col-md-12">
 
-				<div class="card my-card">
+				<div class="mediverse-card">
 
 					<div class="card-body">
 
-						<p class="text-center fs-3 page-title">Patient Details</p>
+						<p class="text-center fs-3 page-title">
+							<i class="fa-solid fa-hospital-user"></i> Patient Details
+						</p>
 
 						<%
 						/* --------- SUCCESS MESSAGE --------- */
 						String successMsg = (String) session.getAttribute("successMsg");
 						if (successMsg != null) {
 						%>
+
 						<p class="text-center text-success fs-5"><%=successMsg%></p>
+
 						<%
 						session.removeAttribute("successMsg");
 						}
@@ -133,7 +149,9 @@ body {
 						String errorMsg = (String) session.getAttribute("errorMsg");
 						if (errorMsg != null) {
 						%>
+
 						<p class="text-center text-danger fs-5"><%=errorMsg%></p>
+
 						<%
 						session.removeAttribute("errorMsg");
 						}
@@ -167,6 +185,7 @@ body {
 									%>
 
 									<tr>
+
 										<td><%=applist.getFullName()%></td>
 										<td><%=applist.getGender()%></td>
 										<td><%=applist.getAge()%></td>
@@ -191,6 +210,7 @@ body {
  %>
 
 										</td>
+
 									</tr>
 
 									<%
@@ -208,6 +228,7 @@ body {
 				</div>
 
 			</div>
+
 		</div>
 
 	</div>
