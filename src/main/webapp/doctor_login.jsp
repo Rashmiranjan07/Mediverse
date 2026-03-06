@@ -5,11 +5,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Admin Login - Mediverse</title>
+<title>Doctor Login | Mediverse</title>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+
 <%@ include file="component/allcss.jsp"%>
 
 <style>
@@ -19,7 +20,7 @@ body {
 	background: #132440;
 }
 
-/* login section */
+/* Center Section */
 .login-section {
 	min-height: calc(100vh - 80px);
 	display: flex;
@@ -28,20 +29,20 @@ body {
 	padding: 40px 15px;
 }
 
-/* login container */
-.login-box {
-	width: 100%;
-	max-width: 420px;
-	background: #ffffff;
+/* Cream Mediverse Container */
+.login-container {
+	background: #f7f0e6;
 	padding: 40px;
-	border-radius: 30px;
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+	border-radius: 12px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+	width: 100%;
+	max-width: 450px;
 }
 
-/* title */
+/* Title */
 .logo {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 
 .logo h2 {
@@ -49,27 +50,34 @@ body {
 	color: #1f3c88;
 }
 
-/* labels */
+.logo h3 {
+	font-weight: 700;
+	color: #e21b23;
+	letter-spacing: 1px;
+}
+
+/* Labels */
 .form-label {
-	font-weight: 500;
+	font-weight: 600;
+	color: #1f3c88;
 	margin-top: 10px;
 }
 
-/* input */
+/* Input */
 .form-control {
-	padding: 14px;
-	border-radius: 10px;
-	border: 1px solid #cfd6df;
-	background: #dfe5ed;
+	padding: 12px;
+	border-radius: 8px;
+	border: 1px solid #ced4da;
+	background: #ffffff;
 }
 
-/* button */
+/* Button */
 .login-btn {
 	width: 100%;
 	margin-top: 20px;
-	padding: 14px;
+	padding: 12px;
 	border: none;
-	border-radius: 10px;
+	border-radius: 8px;
 	background: #1f3c88;
 	color: white;
 	font-weight: 600;
@@ -80,23 +88,25 @@ body {
 	background: #162e69;
 }
 
-/* footer text */
+/* Messages */
+.success-msg {
+	color: green;
+	text-align: center;
+	font-weight: 500;
+}
+
+.error-msg {
+	color: red;
+	text-align: center;
+	font-weight: 500;
+}
+
+/* Footer */
 .footer-text {
 	text-align: center;
 	margin-top: 20px;
-	font-size: 13px;
-	color: #666;
-}
-
-/* mobile adjustments */
-@media ( max-width :576px) {
-	.login-box {
-		padding: 30px;
-		border-radius: 20px;
-	}
-	.logo h2 {
-		font-size: 22px;
-	}
+	font-size: 14px;
+	color: #555;
 }
 </style>
 
@@ -104,17 +114,16 @@ body {
 
 <body>
 
-	<!-- NAVBAR -->
+	<!-- Navbar -->
 	<%@ include file="component/navbar.jsp"%>
 
 	<div class="login-section">
 
-		<div class="login-box">
+		<div class="login-container">
 
 			<div class="logo">
 				<h2>Mediverse</h2>
-				<h3
-					style="font-weight: 700; color: #e21b23; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+				<h3>
 					<i class="bi bi-shield-lock-fill"></i> Doctor
 				</h3>
 			</div>
@@ -124,7 +133,7 @@ body {
 			String successMsg = (String) session.getAttribute("successMsg");
 			if (successMsg != null) {
 			%>
-			<p style="color: green;"><%=successMsg%></p>
+			<p class="success-msg"><%=successMsg%></p>
 			<%
 			session.removeAttribute("successMsg");
 			}
@@ -135,7 +144,7 @@ body {
 			String errorMsg = (String) session.getAttribute("errorMsg");
 			if (errorMsg != null) {
 			%>
-			<p style="color: red;"><%=errorMsg%></p>
+			<p class="error-msg"><%=errorMsg%></p>
 			<%
 			session.removeAttribute("errorMsg");
 			}
@@ -159,8 +168,7 @@ body {
 
 	</div>
 
-
-	<!-- Bootstrap JS (Required for Navbar Toggle) -->
+	<!-- Bootstrap JS -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
