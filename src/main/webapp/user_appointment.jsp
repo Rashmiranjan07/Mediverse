@@ -123,6 +123,13 @@ body {
 	text-align: center;
 	font-weight: 600;
 }
+
+label{
+font-weight:600;
+color:#1f3c88;
+margin-top:10px;
+}
+
 </style>
 
 </head>
@@ -250,11 +257,8 @@ body {
 	</div>
 
 
-	<!-- Footer -->
 
-	<div
-		style="background: white; text-align: center; padding: 15px; font-size: 14px;">
-		© 2026 Mediverse Hospital Management System</div>
+
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
