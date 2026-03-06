@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,16 +12,25 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 
+<!-- FontAwesome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google Font -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+	rel="stylesheet">
+
 <%@ include file="component/allcss.jsp"%>
 
 <style>
 body {
 	margin: 0;
-	font-family: 'Segoe UI', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	background: #132440;
 }
 
-/* register section */
+/* section */
 .register-section {
 	min-height: calc(100vh - 80px);
 	display: flex;
@@ -31,56 +39,98 @@ body {
 	padding: 40px 15px;
 }
 
-/* register box */
+/* cream container */
 .register-box {
 	width: 100%;
 	max-width: 420px;
-	background: #ffffff;
+	background: #fff8ef;
 	padding: 40px;
-	border-radius: 30px;
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+	border-radius: 18px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+	animation: fadeIn 0.7s ease;
+}
+
+/* animation */
+@
+keyframes fadeIn {from { opacity:0;
+	transform: translateY(15px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+
 }
 
 /* title */
 .logo {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 
 .logo h2 {
-	font-weight: 700;
+	font-weight: 600;
 	color: #1f3c88;
+}
+
+.logo h4 {
+	font-weight: 600;
+	color: #e21b23;
+	letter-spacing: 1px;
 }
 
 /* labels */
 .form-label {
 	font-weight: 500;
-	margin-top: 10px;
+	margin-top: 12px;
+	color: #1f3c88;
 }
 
-/* input */
+/* inputs */
 .form-control {
-	padding: 14px;
-	border-radius: 10px;
-	border: 1px solid #cfd6df;
-	background: #eef2f7;
+	padding: 12px;
+	border-radius: 8px;
+	border: 1px solid #e1e6ef;
+	background: #f6f8fc;
+	transition: 0.25s;
 }
 
-/* register button */
+.form-control:focus {
+	border-color: #1f3c88;
+	box-shadow: none;
+	background: white;
+}
+
+/* button */
 .register-btn {
 	width: 100%;
 	margin-top: 20px;
-	padding: 14px;
+	padding: 12px;
 	border: none;
-	border-radius: 10px;
+	border-radius: 8px;
 	background: #1f3c88;
 	color: white;
-	font-weight: 600;
+	font-weight: 500;
 	transition: 0.3s;
 }
 
 .register-btn:hover {
 	background: #162e69;
+	transform: translateY(-2px);
+}
+
+/* messages */
+.success {
+	color: green;
+	text-align: center;
+	font-weight: 500;
+}
+
+.error {
+	color: red;
+	text-align: center;
+	font-weight: 500;
 }
 
 /* login link */
@@ -100,14 +150,10 @@ body {
 	text-decoration: underline;
 }
 
-/* mobile */
+/* responsive */
 @media ( max-width :576px) {
 	.register-box {
 		padding: 30px;
-		border-radius: 20px;
-	}
-	.logo h2 {
-		font-size: 22px;
 	}
 }
 </style>
@@ -116,69 +162,100 @@ body {
 
 <body>
 
-
 	<!-- NAVBAR -->
 	<%@ include file="component/navbar.jsp"%>
-	<!-- Register Section -->
+
 
 	<div class="register-section">
 
 		<div class="register-box">
 
 			<div class="logo">
+
 				<h2>Mediverse</h2>
-				<h4 style="font-weight: 700; color: #e21b23; letter-spacing: 1px;">User
-					Register</h4>
+
+				<h4>User Register</h4>
+
 			</div>
+
+
 			<!-- Success Message -->
+
 			<%
 			String successMsg = (String) session.getAttribute("successMsg");
+
 			if (successMsg != null) {
 			%>
-			<p class="success"><%=successMsg%></p>
+
+			<p class="success">
+				<%=successMsg%>
+			</p>
+
 			<%
 			session.removeAttribute("successMsg");
+
 			}
 			%>
 
+
 			<!-- Error Message -->
+
 			<%
 			String errorMsg = (String) session.getAttribute("errorMsg");
+
 			if (errorMsg != null) {
 			%>
-			<p class="error"><%=errorMsg%></p>
+
+			<p class="error">
+				<%=errorMsg%>
+			</p>
+
 			<%
 			session.removeAttribute("errorMsg");
+
 			}
 			%>
+
 
 			<form action="UserRegisterServlet" method="post">
 
-				<label class="form-label">Full Name</label> <input type="text"
-					name="fullname" class="form-control" placeholder="Enter Full Name"
-					required> <label class="form-label">Email</label> <input
-					type="email" name="email" class="form-control"
+				<label class="form-label"> <i class="fa-solid fa-user"></i>
+					Full Name
+				</label> <input type="text" name="fullname" class="form-control"
+					placeholder="Enter Full Name" required> <label
+					class="form-label"> <i class="fa-solid fa-envelope"></i>
+					Email
+				</label> <input type="email" name="email" class="form-control"
 					placeholder="Enter Email" required> <label
-					class="form-label">Password</label> <input type="password"
-					name="password" class="form-control" placeholder="Create Password"
-					required>
+					class="form-label"> <i class="fa-solid fa-lock"></i>
+					Password
+				</label> <input type="password" name="password" class="form-control"
+					placeholder="Create Password" required>
 
-				<button class="register-btn">Register</button>
+
+				<button class="register-btn">
+
+					<i class="fa-solid fa-user-plus"></i> Register
+
+				</button>
 
 			</form>
 
+
 			<div class="login-link">
+
 				Already have an account? <a href="user_login.jsp">Login</a>
+
 			</div>
+
 
 		</div>
 
 	</div>
 
-	<!-- Bootstrap JS -->
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
