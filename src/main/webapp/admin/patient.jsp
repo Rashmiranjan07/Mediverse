@@ -21,9 +21,13 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+	rel="stylesheet">
+
 <style>
 body {
-	font-family: 'Segoe UI', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	background: #132440;
 	margin: 0;
 }
@@ -33,51 +37,85 @@ body {
 	padding: 50px 20px;
 }
 
-/* card */
+/* cream container */
 .patient-card {
-	background: #ffffff;
-	border-radius: 20px;
+	background: #fff8ef;
+	border-radius: 18px;
 	padding: 30px;
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+	animation: fadeIn 0.7s ease;
+}
+
+/* animation */
+@
+keyframes fadeIn {from { opacity:0;
+	transform: translateY(15px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+
 }
 
 /* title */
 .patient-title {
 	text-align: center;
-	font-size: 30px;
-	font-weight: 700;
+	font-size: 26px;
+	font-weight: 600;
 	color: #1f3c88;
 	margin-bottom: 25px;
 }
 
-/* table */
+/* table design */
+.table {
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+/* table header */
 .table thead {
 	background: #1f3c88;
 	color: white;
 }
 
+/* table head cells */
 .table th {
 	text-align: center;
-	font-weight: 600;
+	font-weight: 500;
+	padding: 12px;
 }
 
+/* table body */
 .table td {
-	vertical-align: middle;
 	text-align: center;
+	vertical-align: middle;
+	padding: 12px;
+}
+
+/* row hover animation */
+.table tbody tr {
+	transition: 0.25s;
+}
+
+.table tbody tr:hover {
+	background: #f4f6ff;
+	transform: scale(1.01);
 }
 
 /* status badge */
 .status-badge {
 	background: #e21b23;
 	padding: 6px 12px;
-	border-radius: 8px;
-	font-weight: 600;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 500;
 }
 
-/* row hover */
-.table tbody tr:hover {
-	background: #f5f7ff;
-	transition: 0.3s;
+/* responsive */
+.table-responsive {
+	border-radius: 10px;
 }
 </style>
 
@@ -93,7 +131,9 @@ body {
 		<div class="patient-card">
 
 			<h3 class="patient-title">
+
 				<i class="fa-solid fa-hospital-user"></i> Patient Details
+
 			</h3>
 
 
@@ -125,6 +165,7 @@ body {
 						List<Appointment> list = appDAO.getAllAppointment();
 
 						if (list != null && !list.isEmpty()) {
+
 							for (Appointment app : list) {
 
 								Doctor doctor = docDAO.getDoctorById(app.getDoctorId());
@@ -133,15 +174,20 @@ body {
 						<tr>
 
 							<td><%=app.getFullName()%></td>
+
 							<td><%=app.getGender()%></td>
+
 							<td><%=app.getAge()%></td>
+
 							<td><%=app.getAppointmentDate()%></td>
+
 							<td><%=app.getEmail()%></td>
+
 							<td><%=app.getPhone()%></td>
+
 							<td><%=app.getDiseases()%></td>
 
-							<td><%=(doctor != null) ? doctor.getFullName() : "Not Assigned"%>
-							</td>
+							<td><%=(doctor != null) ? doctor.getFullName() : "Not Assigned"%></td>
 
 							<td><%=app.getAddress()%></td>
 
@@ -152,6 +198,7 @@ body {
 
 						<%
 						}
+
 						} else {
 						%>
 

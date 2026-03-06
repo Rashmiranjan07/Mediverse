@@ -36,21 +36,34 @@ body {
 	padding: 50px 20px;
 }
 
-/* card */
-.doctor-card {
-	background: #ffffff;
-	border-radius: 20px;
+/* MEDIVERSE CREAM CONTAINER */
+.doctor-container {
+	background: #fff8ef;
+	border-radius: 16px;
 	padding: 30px;
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
 /* title */
 .doctor-title {
 	text-align: center;
-	font-size: 30px;
+	font-size: 26px;
 	font-weight: 700;
 	color: #1f3c88;
 	margin-bottom: 25px;
+}
+
+/* add button */
+.add-btn {
+	background: #e21b23;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 8px;
+}
+
+.add-btn:hover {
+	background: #b6161c;
 }
 
 /* table */
@@ -65,27 +78,17 @@ body {
 }
 
 .table td {
-	vertical-align: middle;
 	text-align: center;
+	vertical-align: middle;
 }
 
 /* hover */
 .table tbody tr:hover {
-	background: #f5f7ff;
+	background: #fff2e2;
 	transition: 0.3s;
 }
 
 /* buttons */
-.add-btn {
-	background: #1f3c88;
-	color: white;
-	border: none;
-}
-
-.add-btn:hover {
-	background: #162d66;
-}
-
 .edit-btn {
 	background: #1f3c88;
 	color: white;
@@ -105,7 +108,7 @@ body {
 
 	<div class="container doctor-section">
 
-		<div class="doctor-card">
+		<div class="doctor-container">
 
 			<h3 class="doctor-title">
 				<i class="fa-solid fa-user-doctor"></i> Mediverse Doctors
