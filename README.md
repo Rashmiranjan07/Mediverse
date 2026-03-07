@@ -1,66 +1,67 @@
-# 🏥 Mediverse – Healthcare Management System
+<div align="center">
 
-![Java](https://img.shields.io/badge/Java-17-orange)
-![JSP](https://img.shields.io/badge/JSP-Servlet-blue)
-![MySQL](https://img.shields.io/badge/Database-MySQL-yellow)
-![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple)
-![Tomcat](https://img.shields.io/badge/Server-Apache_Tomcat-red)
+# 🏥 Mediverse
 
-Mediverse is a **web-based healthcare management system** designed to simplify hospital and clinic workflows.  
-It connects **patients, doctors, and administrators** through a single platform to manage appointments, medical interactions, and system operations efficiently.
+### A Modern Healthcare Management System
 
-This project was built as part of a **Java Full Stack learning journey**, focusing on **Servlets, JSP, JDBC, and MySQL integration**.
+<img src="https://img.shields.io/badge/Java-Backend-orange?style=for-the-badge&logo=java">
+<img src="https://img.shields.io/badge/JSP-Servlet-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/MySQL-Database-yellow?style=for-the-badge&logo=mysql">
+<img src="https://img.shields.io/badge/Bootstrap-UI-purple?style=for-the-badge&logo=bootstrap">
+<img src="https://img.shields.io/badge/Apache%20Tomcat-Server-red?style=for-the-badge&logo=apachetomcat">
+
+<br>
+
+✨ **Mediverse is a web-based healthcare management platform designed to streamline the interaction between patients, doctors, and administrators.**  
+It helps manage appointments, doctor schedules, and patient records efficiently through a clean and responsive interface.
+
+</div>
+
+---
+
+# 🌟 Overview
+
+Mediverse simplifies hospital workflow by providing a centralized platform where:
+
+👤 Patients can book and track appointments  
+🩺 Doctors can manage consultations and schedules  
+🏥 Administrators can manage doctors and monitor system operations  
+
+The project was built as part of a **Java Full Stack development learning journey** using **Servlets, JSP, and MySQL**.
 
 ---
 
 # 🚀 Features
 
 ## 👤 Patient Module
-- User registration & login
-- Book doctor appointments
-- View appointment status
-- Track medical consultations
+- Secure user registration and login
+- Book appointments with available doctors
+- View appointment history and status
+- Track consultation updates
 
 ## 🩺 Doctor Module
 - Doctor dashboard
 - View patient appointments
-- Update appointment status
-- Manage patient interactions
+- Manage consultation status
+- Update appointment progress
 
 ## 🏥 Admin Module
-- Add & manage doctors
-- Monitor system activity
-- Manage appointments
-- Control platform data
-
-## ⚙️ System Capabilities
-- Role-based authentication
-- Database-driven dynamic data
-- Secure session management
-- Responsive UI design
+- Manage doctors and staff
+- Monitor appointments
+- Control system records
+- Maintain healthcare data
 
 ---
 
-# 🛠️ Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
-- HTML5
-- CSS3
-- Bootstrap
-- JSP
-
-### Backend
-- Java
-- Java Servlets
-- JDBC
-
-### Database
-- MySQL
-
-### Tools
-- Apache Tomcat
-- Eclipse IDE
-- Git & GitHub
+| Layer | Technologies |
+|------|--------------|
+| Frontend | HTML5, CSS3, Bootstrap, JSP |
+| Backend | Java, Servlets, JDBC |
+| Database | MySQL |
+| Server | Apache Tomcat |
+| Tools | Eclipse IDE, Git, GitHub |
 
 ---
 
