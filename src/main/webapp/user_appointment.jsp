@@ -150,7 +150,7 @@ margin-top:10px;
 
 			<div class="ms-auto">
 				<a href="index2.jsp" class="btn btn-outline-primary me-2">Home</a> <a
-					href="logout" class="btn btn-danger">Logout</a>
+					href="userLogout" class="btn btn-danger">Logout</a>
 			</div>
 
 		</nav>
