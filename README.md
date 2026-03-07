@@ -67,7 +67,7 @@ The project was built as part of a **Java Full Stack development learning journe
 
 # 📂 Project Structure
 
----
+```
 Mediverse
 │
 ├── src/
@@ -86,5 +86,5 @@ Mediverse
 ├── img/
 ├── index.jsp
 └── README.md
+```
 
----
