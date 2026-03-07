@@ -88,9 +88,7 @@ Mediverse
 └── README.md
 ```
 
-
-
-# ⚙️ Installation & Setup
+## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the Repository
 
@@ -98,5 +96,44 @@ Mediverse
 git clone https://github.com/Rashmiranjan07/Mediverse.git
 ```
 
-###2️⃣ Import Project
-Open the project in:
+### 2️⃣ Import Project
+
+Open the project in one of the following IDEs:
+
+- **Eclipse IDE**
+- **IntelliJ IDEA**
+
+Import the project as:
+
+```text
+Dynamic Web Project
+```
+### 3️⃣ Configure Database
+
+Create a MySQL database:
+```text
+CREATE DATABASE mediverse_db;
+```
+Update the database connection inside:
+```text
+DBConnection.java
+```
+Example configuration:
+```text
+DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/mediverse_db",
+    "root",
+    "password"
+);
+```
+### 4️⃣ Run on Apache Tomcat
+
+- **Install Apache Tomcat**
+- **Add the project to the Tomcat server**
+- **Start the server**
+  
+Open the application in your browser:
+```text
+http://localhost:8080/Mediverse
+```
+
