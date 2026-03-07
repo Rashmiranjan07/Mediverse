@@ -66,3 +66,25 @@ The project was built as part of a **Java Full Stack development learning journe
 ---
 
 # 📂 Project Structure
+
+---
+Mediverse
+│
+├── src/
+│ ├── com.hms.dao
+│ ├── com.hms.entity
+│ ├── com.hms.servlet
+│ └── com.hms.db
+│
+├── WebContent/
+│ ├── admin/
+│ ├── doctor/
+│ ├── user/
+│ ├── component/
+│ └── css/
+│
+├── img/
+├── index.jsp
+└── README.md
+
+---
