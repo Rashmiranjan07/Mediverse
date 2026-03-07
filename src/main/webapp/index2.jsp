@@ -138,7 +138,7 @@ to {
 
 					<ul class="navbar-nav ms-auto">
 
-						<li class="nav-item"><a class="nav-link" href="logout"
+						<li class="nav-item"><a class="nav-link" href="userLogout"
 							style="color: #e21b23; font-weight: 600; margin: 0 15px;">
 								Logout </a></li>
 
