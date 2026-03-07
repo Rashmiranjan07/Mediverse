@@ -88,7 +88,7 @@ Mediverse
 └── README.md
 ```
 
----
+
 
 # ⚙️ Installation & Setup
 
@@ -96,3 +96,7 @@ Mediverse
 
 ```bash
 git clone https://github.com/Rashmiranjan07/Mediverse.git
+```
+
+###2️⃣ Import Project
+Open the project in:
