@@ -151,11 +151,17 @@ http://localhost:8080/Mediverse
 <img width="1905" height="938" alt="m4" src="https://github.com/user-attachments/assets/42010cbb-e6f9-4f91-872a-6a70ca0a1ed4" />
 <img width="1907" height="940" alt="m6" src="https://github.com/user-attachments/assets/e664a6d2-3087-4854-9d5a-dded6a41d07c" />
 <img width="1910" height="935" alt="m5" src="https://github.com/user-attachments/assets/92167da2-aceb-4d72-8950-f7c3ff72df68" />
+
+## User 
+
 <img width="1905" height="941" alt="m7" src="https://github.com/user-attachments/assets/c37f37fa-0923-419b-a298-9da52d95dbab" />
 <img width="1900" height="939" alt="m8" src="https://github.com/user-attachments/assets/50c6c0df-d825-4cc4-8d98-c0ee45816c97" />
 <img width="1894" height="930" alt="m9" src="https://github.com/user-attachments/assets/7a6e9fef-f336-46e0-934b-2c5a2637970c" />
 <img width="1894" height="939" alt="m10" src="https://github.com/user-attachments/assets/6a98d362-ea3e-43d8-b0a7-a563831bfcfb" />
 <img width="1919" height="938" alt="m11" src="https://github.com/user-attachments/assets/a2a62f9b-b3b8-43cd-8979-9c94dace9ec6" />
+
+## Admin 
+
 <img width="1901" height="940" alt="m12" src="https://github.com/user-attachments/assets/a50e701c-8164-4ed7-be4a-0d4667cd0529" />
 <img width="1919" height="943" alt="m13" src="https://github.com/user-attachments/assets/c1474124-d818-4478-b3e3-fc4305820bc4" />
 <img width="1882" height="933" alt="m14" src="https://github.com/user-attachments/assets/7febef80-9d1f-4193-b3e5-76511ae8d8b8" />
