@@ -140,16 +140,6 @@ http://localhost:8080/Mediverse
 
 # 📸 Screenshots
 
-## 🏠 Homepage
-![Homepage](screenshots/homepage.png)
-
-
-## 👨‍⚕️ Doctor Dashboard
-![Doctor Dashboard](screenshots/doctor-dashboard.png)
-
-## 📅 Appointment Booking
-![Appointment](screenshots/appointment.png)
-
 
 ---
 
