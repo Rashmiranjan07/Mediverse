@@ -136,4 +136,79 @@ Open the application in your browser:
 ```text
 http://localhost:8080/Mediverse
 ```
+---
+
+# 📸 Screenshots
+
+## 🏠 Homepage
+![Homepage](screenshots/homepage.png)
+
+## 👨‍⚕️ Doctor Dashboard
+![Doctor Dashboard](screenshots/doctor-dashboard.png)
+
+## 📅 Appointment Booking
+![Appointment](screenshots/appointment.png)
+
+> Add your project screenshots inside a folder named **screenshots** in your repository.
+
+---
+
+# 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+### Steps to contribute
+
+1️⃣ **Fork the repository**
+
+2️⃣ **Clone your fork**
+
+```bash
+git clone https://github.com/your-username/Mediverse.git
+```
+3️⃣ **Create a new branch**
+```bash
+git checkout -b feature-new
+```
+4️⃣ **Make your changes and commit**
+```bash
+git commit -m "Added new feature"
+```
+5️⃣ **Push to your branch**
+```bash
+git push origin feature-new
+```
+6️⃣ **Open a Pull Request**
+
+
+# 📜 License
+
+This project is created for educational and learning purposes.
+You are free to use, modify, and improve the project.
+
+# 👨‍💻 Author
+
+Rashmiranjan Shaw
+
+💼 Java Full Stack Developer
+📚 Passionate about Backend Development, System Design & Web Applications
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
