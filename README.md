@@ -164,14 +164,24 @@ Some Screenshots of this project are given below
 
 ## Edit Doctor:
 <img width="1909" height="946" alt="m16" src="https://github.com/user-attachments/assets/1a305a34-2e0e-4a6c-84fa-f3d71f16107b" />
+
+## View Patient:
+
 <img width="1905" height="942" alt="m17" src="https://github.com/user-attachments/assets/ca3d167e-a7e5-4ad3-81b2-2dff2b1c6854" />
 
 
-## Doctor 
+## Doctor Login:
 
 <img width="1904" height="946" alt="m3" src="https://github.com/user-attachments/assets/481b0bfa-bc03-4ffe-815e-d87c898a20a1" />
+
+## Doctor Dashboard:
+
 <img width="1905" height="938" alt="m4" src="https://github.com/user-attachments/assets/42010cbb-e6f9-4f91-872a-6a70ca0a1ed4" />
+
+## Patient Details:
 <img width="1907" height="940" alt="m6" src="https://github.com/user-attachments/assets/e664a6d2-3087-4854-9d5a-dded6a41d07c" />
+
+## Edit & Modify password:
 <img width="1910" height="935" alt="m5" src="https://github.com/user-attachments/assets/92167da2-aceb-4d72-8950-f7c3ff72df68" />
 
 ## User 
