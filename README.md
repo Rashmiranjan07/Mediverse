@@ -141,12 +141,23 @@ http://localhost:8080/Mediverse
 # 📸 Screenshots
 
 ## 🏠 Homepage
-![Recording 2026-03-09 221834](https://github.com/user-attachments/assets/77ad48e8-b23a-4371-969f-dc31f8a71e88)
+
+<img width="1899" height="936" alt="m1" src="https://github.com/user-attachments/assets/15e6d9e9-b017-427c-8b9f-55734be7f600" />
+<img width="1894" height="949" alt="m2" src="https://github.com/user-attachments/assets/dbf7f846-8ec0-4a42-9dad-f0c27febb410" />
+
+## Doctor 
+
+<img width="1904" height="946" alt="m3" src="https://github.com/user-attachments/assets/481b0bfa-bc03-4ffe-815e-d87c898a20a1" />
+<img width="1905" height="938" alt="m4" src="https://github.com/user-attachments/assets/42010cbb-e6f9-4f91-872a-6a70ca0a1ed4" />
+<img width="1910" height="935" alt="m5" src="https://github.com/user-attachments/assets/92167da2-aceb-4d72-8950-f7c3ff72df68" />
 
 
 
 
-![Recording 2026-03-09 221834 (1)](https://github.com/user-attachments/assets/8e2c0cf6-eccc-4473-9d63-5d820d2d1e19)
+
+
+
+
 
 ---
 # 🤝 Contributing
