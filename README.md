@@ -143,13 +143,13 @@ http://localhost:8080/Mediverse
 ## 🏠 Homepage
 ![Homepage](screenshots/homepage.png)
 
+
 ## 👨‍⚕️ Doctor Dashboard
 ![Doctor Dashboard](screenshots/doctor-dashboard.png)
 
 ## 📅 Appointment Booking
 ![Appointment](screenshots/appointment.png)
 
-> Add your project screenshots inside a folder named **screenshots** in your repository.
 
 ---
 
