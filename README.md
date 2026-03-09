@@ -184,13 +184,25 @@ Some Screenshots of this project are given below
 ## Edit & Modify password:
 <img width="1910" height="935" alt="m5" src="https://github.com/user-attachments/assets/92167da2-aceb-4d72-8950-f7c3ff72df68" />
 
-## User 
+## User Login:
 
 <img width="1905" height="941" alt="m7" src="https://github.com/user-attachments/assets/c37f37fa-0923-419b-a298-9da52d95dbab" />
-<img width="1900" height="939" alt="m8" src="https://github.com/user-attachments/assets/50c6c0df-d825-4cc4-8d98-c0ee45816c97" />
-<img width="1894" height="930" alt="m9" src="https://github.com/user-attachments/assets/7a6e9fef-f336-46e0-934b-2c5a2637970c" />
-<img width="1894" height="939" alt="m10" src="https://github.com/user-attachments/assets/6a98d362-ea3e-43d8-b0a7-a563831bfcfb" />
+
+## User Register:
 <img width="1919" height="938" alt="m11" src="https://github.com/user-attachments/assets/a2a62f9b-b3b8-43cd-8979-9c94dace9ec6" />
+
+## User portal:
+<img width="1900" height="939" alt="m8" src="https://github.com/user-attachments/assets/50c6c0df-d825-4cc4-8d98-c0ee45816c97" />
+
+## Book Appointment
+
+<img width="1894" height="930" alt="m9" src="https://github.com/user-attachments/assets/7a6e9fef-f336-46e0-934b-2c5a2637970c" />
+
+## View Appointment
+
+<img width="1894" height="939" alt="m10" src="https://github.com/user-attachments/assets/6a98d362-ea3e-43d8-b0a7-a563831bfcfb" />
+
+
 
 
 
