@@ -143,8 +143,12 @@ http://localhost:8080/Mediverse
 ## 🏠 Homepage
 ![Recording 2026-03-09 221834](https://github.com/user-attachments/assets/77ad48e8-b23a-4371-969f-dc31f8a71e88)
 
----
 
+
+
+![Recording 2026-03-09 221834 (1)](https://github.com/user-attachments/assets/8e2c0cf6-eccc-4473-9d63-5d820d2d1e19)
+
+---
 # 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
