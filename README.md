@@ -141,6 +141,8 @@ http://localhost:8080/Mediverse
 # 📸 Screenshots
 
 
+![Recording 2026-03-09 221834](https://github.com/user-attachments/assets/77ad48e8-b23a-4371-969f-dc31f8a71e88)
+
 ---
 
 # 🤝 Contributing
