@@ -153,8 +153,16 @@ Some Screenshots of this project are given below
 ## Admin Dashboard:
 
 <img width="1919" height="943" alt="m13" src="https://github.com/user-attachments/assets/c1474124-d818-4478-b3e3-fc4305820bc4" />
+
+## Add Doctor:
+
 <img width="1882" height="933" alt="m14" src="https://github.com/user-attachments/assets/7febef80-9d1f-4193-b3e5-76511ae8d8b8" />
+
+## View Doctor:
+
 <img width="1918" height="939" alt="m15" src="https://github.com/user-attachments/assets/7a1a1670-f529-46d2-a848-ce6e2b9710fe" />
+
+## Edit Doctor:
 <img width="1909" height="946" alt="m16" src="https://github.com/user-attachments/assets/1a305a34-2e0e-4a6c-84fa-f3d71f16107b" />
 <img width="1905" height="942" alt="m17" src="https://github.com/user-attachments/assets/ca3d167e-a7e5-4ad3-81b2-2dff2b1c6854" />
 
