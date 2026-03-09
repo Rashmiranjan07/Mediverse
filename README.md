@@ -138,16 +138,20 @@ http://localhost:8080/Mediverse
 ```
 ---
 
-# 📸 Screenshots
+# Project view
+Some Screenshots of this project are given below
 
-## 🏠 Homepage
+## 🏠 Home page:
 
 <img width="1899" height="936" alt="m1" src="https://github.com/user-attachments/assets/15e6d9e9-b017-427c-8b9f-55734be7f600" />
 <img width="1894" height="949" alt="m2" src="https://github.com/user-attachments/assets/dbf7f846-8ec0-4a42-9dad-f0c27febb410" />
 
-## Admin 
+## Admin Login:
 
 <img width="1901" height="940" alt="m12" src="https://github.com/user-attachments/assets/a50e701c-8164-4ed7-be4a-0d4667cd0529" />
+
+## Admin Dashboard:
+
 <img width="1919" height="943" alt="m13" src="https://github.com/user-attachments/assets/c1474124-d818-4478-b3e3-fc4305820bc4" />
 <img width="1882" height="933" alt="m14" src="https://github.com/user-attachments/assets/7febef80-9d1f-4193-b3e5-76511ae8d8b8" />
 <img width="1918" height="939" alt="m15" src="https://github.com/user-attachments/assets/7a1a1670-f529-46d2-a848-ce6e2b9710fe" />
